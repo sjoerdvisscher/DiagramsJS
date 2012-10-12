@@ -19,6 +19,7 @@ var Diagrams = (function()
       var key = [];
       for (var i = 0; i < arguments.length; i++)
         key[i] = arguments[i].id || arguments[i];
+      key.push(this.id || this)
       var val = memoTable[key];
       if (val !== undefined)
         return val;
@@ -45,7 +46,7 @@ var Diagrams = (function()
       height: h || w || 256,
       fill: "black"
     });
-    svg.appendChild(this.scale(100).draw({}));
+    svg.appendChild(this.draw({}));
     return svg;
   }
   Shape.prototype.draw = function(defs)
