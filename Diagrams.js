@@ -19,7 +19,7 @@ var Diagrams = (function()
       var key = [];
       for (var i = 0; i < arguments.length; i++)
         key[i] = arguments[i].id || arguments[i];
-      key.push(this.id || this)
+      key.push(this.id || this);
       var val = memoTable[key];
       if (val !== undefined)
         return val;

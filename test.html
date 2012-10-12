@@ -39,15 +39,15 @@
       {
         if (idx % 2 == 1)
           return Diagrams.group(
-            prev.scale(0.5).translate(-1, 0), 
-            prev.scale(0.5).translate( 1, 0));
+            prev.scale(0.8).translate(-1, 0), 
+            prev.scale(0.8).translate( 1, 0));
         else
           return Diagrams.group(
-            prev.scale(0.5).translate(0, -0.5), 
-            prev.scale(0.5).translate(0,  0.5));
+            prev.scale(0.45).translate(0, -0.5), 
+            prev.scale(0.45).translate(0,  0.5));
       }
       var r = 0.8 / (1 + 1/p);
-      var sized = prev.scale(1/p);
+      var sized = prev.scale(Math.pow(p, -0.8));
       var g = [];
       for (var i = 0; i < p; i++)
         g.push(sized.translate(Math.sin(Math.PI * 2 * i / p) * r, Math.cos(Math.PI * 2 * i / p) * r));
